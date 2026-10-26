@@ -16,7 +16,7 @@ function formatDisplayDate(dateStr?: string): string {
   try {
     const date = new Date(dateStr)
     if (!isNaN(date.getTime())) {
-      return date.toLocaleDateString('en-US', {
+      return date.toLocaleDateString('es-PE', {
         month: 'short',
         day: 'numeric',
         year: 'numeric',
@@ -67,7 +67,7 @@ function useUrlQuery(initialQuery: string = '') {
 function PostItem({ post }: { post: Post }) {
   return (
     <article className="group">
-      <div className="flex items-start justify-between gap-6 sm:gap-8">
+      <div className="md:flex items-start justify-between gap-6 sm:gap-8">
         <div className="flex-1 min-w-0">
           <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors text-balance">
             <a href={`/archives/${post.slug}`} className="hover:text-primary">
@@ -92,13 +92,13 @@ function PostItem({ post }: { post: Post }) {
             </div>
           )}
         </div>
-        <div className="text-right shrink-0 whitespace-nowrap pt-0.5">
+        <div className="flex flex-row-reverse md:block items-center justify-between text-right shrink-0 whitespace-nowrap pt-0.5">
           <time className="text-xs sm:text-sm text-muted-foreground block">
             {formatDisplayDate(post.date)}
           </time>
           {typeof post.readMinutes === 'number' && (
-            <span className="text-xs text-muted-foreground/70 block mt-0.5">
-              {post.readMinutes} min read
+            <span className="text-sm text-muted-foreground/70 block mt-0.5 text-wrap">
+              {post.readMinutes} min de lectura
             </span>
           )}
         </div>
@@ -125,10 +125,10 @@ export default function ArchiveList({ posts = [], initialQuery = '', tags }: Arc
     <div className="max-w-3xl mx-auto">
       <div className="mb-10">
         <div className="max-w-md">
-          <SearchBar 
-            value={query || ''} 
-            onChange={setQuery} 
-            placeholder="Search articles..." 
+          <SearchBar
+            value={query || ''}
+            onChange={setQuery}
+            placeholder="Buscar artículos..."
             posts={posts}
           />
         </div>
@@ -152,7 +152,7 @@ export default function ArchiveList({ posts = [], initialQuery = '', tags }: Arc
 
       {safePosts.length === 0 ? (
         <div className="text-center text-muted-foreground py-12" aria-live="polite" role="status">
-          No matching articles found.
+          No se encontraron artículos coincidentes.
         </div>
       ) : (
         <div className="space-y-10 sm:space-y-12">

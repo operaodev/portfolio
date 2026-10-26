@@ -1,9 +1,9 @@
 ---
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/archives', label: 'Archive' },
-  { href: '/tags', label: 'Tags' },
-  { href: '/resume', label: 'Resume' },
+  { href: '/', label: 'Inicio' },
+  { href: '/archives', label: 'Archivos' },
+  { href: '/tags', label: 'Etiquetas' },
+  { href: '/resume', label: 'Resumen' },
 ];
 const pathname = Astro.url.pathname;
 function isActiveHref(href: string) {
@@ -15,7 +15,7 @@ function linkClass(href: string) {
   return `text-sm transition-colors ${active ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`;
 }
 ---
-<nav class="sticky top-0 z-50">
+<nav id="site-nav" class="sticky top-0 z-50">
   <div class="container mx-auto px-6">
     <div class="flex h-16 items-center justify-center">
       <div class="flex items-center gap-6">
@@ -26,3 +26,36 @@ function linkClass(href: string) {
     </div>
   </div>
 </nav>
+
+<style>
+  #site-nav {
+    transition:
+      background-color 250ms ease,
+      backdrop-filter 250ms ease,
+      -webkit-backdrop-filter 250ms ease;
+  }
+
+  #site-nav.is-scrolled {
+    background-color: color-mix(in oklab, var(--background) 52%, transparent);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    if (window.__navScrollReady) return;
+    window.__navScrollReady = true;
+
+    const update = () => {
+      const nav = document.getElementById("site-nav");
+      if (!nav) return;
+      nav.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    document.addEventListener("astro:page-load", update);
+    document.addEventListener("astro:after-swap", update);
+    update();
+  })();
+</script>

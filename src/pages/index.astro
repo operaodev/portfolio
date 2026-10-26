@@ -1,15 +1,18 @@
 ---
 import Base from "../layouts/Base.astro";
 import siteInfo from "../../public/0user.json";
+import { Icon } from "astro-icon/components";
 ---
 
-<Base title={siteInfo.site.title}
-      description={siteInfo.site.description}>
-
-    <section class="container mx-auto px-6 py-16 flex-grow flex flex-col justify-center">
+<Base title={siteInfo.site.title} description={siteInfo.site.description}>
+    <section class="container mx-auto px-6 py-16 grow flex flex-col justify-center">
         <div class="max-w-3xl mx-auto w-full">
-            <h1 class="mb-2 text-4xl md:text-5xl font-bold tracking-tight text-balance">{siteInfo.name}</h1>
-            <p class="mb-4 text-lg md:text-xl text-muted-foreground">{siteInfo.role}</p>
+            <h1 class="mb-2 text-4xl md:text-5xl font-bold tracking-tight text-balance">
+                {siteInfo.name}
+            </h1>
+            <p class="mb-4 text-lg md:text-xl text-muted-foreground">
+                {siteInfo.role}
+            </p>
 
             <p class="mb-4 text-base md:text-lg text-foreground/85 leading-relaxed text-pretty">
                 {siteInfo.home.bio}
@@ -18,19 +21,20 @@ import siteInfo from "../../public/0user.json";
                 {siteInfo.home.note}
             </p>
 
-            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <div class="flex flex-wrap items-center gap-5">
                 {siteInfo.contacts.map((contact) => (
-                        <div>
-                            [{contact.label}: <a
-                                href={contact.href}
-                                target={contact.target}
-                                rel={contact.rel}
-                                class="text-muted-foreground underline underline-offset-2 decoration-accent/50 hover:text-accent hover:decoration-accent transition-colors"
-                        >{contact.text}</a>]
-                        </div>
+                    <a
+                        href={contact.href}
+                        target={contact.target}
+                        rel={contact.rel}
+                        aria-label={contact.label}
+                        title={contact.label}
+                        class="text-muted-foreground hover:text-accent transition-colors"
+                    >
+                        <Icon name={contact.label} class="w-10 h-10" />
+                    </a>
                 ))}
             </div>
         </div>
     </section>
-
 </Base>

@@ -16,7 +16,7 @@ function formatDisplayDate(dateStr?: string): string {
   try {
     const date = new Date(dateStr)
     if (!isNaN(date.getTime())) {
-      return date.toLocaleDateString('en-US', {
+      return date.toLocaleDateString('es-PE', {
         month: 'short',
         day: 'numeric',
         year: 'numeric',
@@ -109,7 +109,7 @@ export default function SearchOverlay({
       role="dialog"
       aria-modal="true"
       aria-label="Search articles"
-      className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/40 px-4 pb-10 pt-[14vh] backdrop-blur-sm dark:bg-black/60"
+      className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/60 px-4 pb-10 pt-[14vh] backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
@@ -141,8 +141,8 @@ export default function SearchOverlay({
               setQuery(next)
               onQueryChange?.(next)
             }}
-            placeholder="Search articles..."
-            aria-label="Search articles"
+            placeholder="Buscar articulos..."
+            aria-label="Buscar articulos"
             className="w-full bg-transparent py-3.5 text-sm text-foreground outline-none placeholder:text-muted-foreground/70"
           />
           <Kbd>esc</Kbd>
@@ -194,7 +194,7 @@ export default function SearchOverlay({
                         </span>
                       ))}
                       {typeof post.readMinutes === 'number' && (
-                        <span className="text-[11px] text-muted-foreground/60">{post.readMinutes} min read</span>
+                        <span className="text-[11px] text-muted-foreground/60">{post.readMinutes} min de lectura</span>
                       )}
                     </div>
                   )}
@@ -208,15 +208,15 @@ export default function SearchOverlay({
           <span className="inline-flex items-center gap-1.5">
             <Kbd>↑</Kbd>
             <Kbd>↓</Kbd>
-            Navigate
+            Navegación
           </span>
           <span className="inline-flex items-center gap-1.5">
             <Kbd>↵</Kbd>
-            Open
+            Abrir
           </span>
           <span className="ml-auto inline-flex items-center gap-1.5">
             <Kbd>esc</Kbd>
-            Close
+            Cerrar
           </span>
         </footer>
       </div>

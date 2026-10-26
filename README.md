@@ -81,11 +81,11 @@ Some nice extras your markdown supports:
 
 ## Customizing colors
 
-The whole color scheme lives in `src/styles/global.css`, split into a light block (`:root`) and a dark block. Every color has a short comment next to it saying what it's used for, so you can just tweak the `oklch(...)` values and see the difference.
+The whole color scheme lives in `src/styles/global.css` and is dark-only. Every color has a short comment next to it saying what it's used for, so you can just tweak the `oklch(...)` values and see the difference.
 
 ```css
---background: oklch(99% .002 286);   /* page background */
---accent:     oklch(54% .22 293);    /* highlight: links, focus */
+--background: oklch(14.8% .004 286); /* page background */
+--accent:     oklch(71% .17 293.5);  /* highlight: links, focus */
 ```
 
 The site uses JetBrains Mono for everything. That's loaded in `src/layouts/Base.astro`.

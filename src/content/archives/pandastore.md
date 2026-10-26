@@ -44,5 +44,5 @@ El sitio permite explorar los paquetes más vendidos, filtrar por juego, validar
 
 Este proyecto me permitió llevar una idea real a producción: diseñar una interfaz clara para un catálogo con muchos productos, cuidar la experiencia de compra en móvil, organizar los datos de los paquetes y desplegar el sitio en Vercel con un flujo de trabajo moderno.
 
-> [!TIP]
+> [!INFO]
 > El sitio está en producción y puedes probarlo en [pandastore.website](https://www.pandastore.website/).

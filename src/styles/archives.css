@@ -172,14 +172,10 @@
   }
 
   .prose mark {
-    background: color-mix(in oklab, #f7e06e 88%, transparent);
+    background: color-mix(in oklab, #e9c93a 35%, transparent);
     padding: 0 0.2em;
     border-radius: 0.2em;
     color: inherit;
-  }
-
-  .dark .prose mark {
-    background: color-mix(in oklab, #e9c93a 35%, transparent);
   }
 
   .prose .katex-display {

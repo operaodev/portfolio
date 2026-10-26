@@ -12,6 +12,8 @@ import {remarkCallouts} from './src/plugins/remark-callouts.ts'
 import {remarkCodeGroups, rehypeCodeTabs} from './src/plugins/code-tabs.ts'
 import {rehypeExternalLinks} from './src/plugins/rehype-external-links.ts'
 
+import icon from 'astro-icon';
+
 const expressiveConfig = {
     themes: ['github-dark'],
     useDarkModeMediaQuery: false,
@@ -71,7 +73,7 @@ const processor = unified({
 })
 
 export default defineConfig({
-    integrations: [react()],
+    integrations: [react(), icon()],
     vite: {
         plugins: [tailwindcss()],
     },
