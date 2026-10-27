@@ -24,3 +24,5 @@ pnpm-debug.log*
 .idea/
 .junie/
 .skills/*
+skills/system/run-workflow/SKILL.md
+skills/

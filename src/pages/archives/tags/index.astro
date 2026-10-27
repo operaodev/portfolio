@@ -18,19 +18,36 @@ const tags = getAllTags(posts);
             <nav aria-label="Breadcrumb" class="mb-6">
                 <ol class="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
                     <li class="flex items-center gap-1.5">
-                        <a href="/" class="transition-colors hover:text-foreground">
+                        <a
+                            href="/"
+                            class="transition-colors hover:text-foreground"
+                        >
                             Inicio
                         </a>
                     </li>
                     <li class="flex items-center gap-1.5">
-                        <ChevronRight size={12} class="opacity-60" aria-hidden="true" />
-                        <a href="/archives" class="transition-colors hover:text-foreground">
+                        <ChevronRight
+                            size={12}
+                            class="opacity-60"
+                            aria-hidden="true"
+                        />
+                        <a
+                            href="/archives"
+                            class="transition-colors hover:text-foreground"
+                        >
                             Archives
                         </a>
                     </li>
                     <li class="flex items-center gap-1.5">
-                        <ChevronRight size={12} class="opacity-60" aria-hidden="true" />
-                        <span aria-current="page" class="font-medium text-foreground">
+                        <ChevronRight
+                            size={12}
+                            class="opacity-60"
+                            aria-hidden="true"
+                        />
+                        <span
+                            aria-current="page"
+                            class="font-medium text-foreground"
+                        >
                             Etiquetas
                         </span>
                     </li>
@@ -53,12 +70,13 @@ const tags = getAllTags(posts);
                             href={`/archives/tags/${tag.slug}`}
                             class="group flex items-baseline justify-between gap-4 py-3.5 transition-colors"
                         >
-                            <span class="min-w-0 break-words font-mono text-sm text-foreground transition-colors group-hover:text-accent">
+                            <span class="min-w-0 wrap-break-words font-mono text-sm text-foreground transition-colors group-hover:text-accent">
                                 <span class="text-accent/70">#</span>
                                 {tag.name}
                             </span>
                             <span class="shrink-0 text-xs text-muted-foreground">
-                                {tag.count} {tag.count === 1 ? "artículo" : "artículos"}
+                                {tag.count}{" "}
+                                {tag.count === 1 ? "artículo" : "artículos"}
                             </span>
                         </a>
                     </li>
