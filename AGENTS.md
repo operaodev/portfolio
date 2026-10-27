@@ -26,7 +26,7 @@ There is no test, lint, or formatter script. Run `pnpm check` and `pnpm build` a
 - `src/content/archives/*.md` — posts. Schema is in `src/content.config.ts`; `draft` defaults to `false`, and `src/lib/archive_data.ts` filters drafts out.
 - `src/content/projects/*.md` — project posts rendered at `/projects/<slug>`. They use `image` for the list preview (falls back to `ogImage`, then `/placeholder.svg`) and optional `url` for the live-site button.
 - Archive and project posts are named `YYYY-MM-DD-slug.md` so the folders sort chronologically. `generateId` in `src/content.config.ts` strips the date, so public URLs stay `/archives/<slug>` and `/projects/<slug>` — keep that in sync when renaming posts.
-- Tag pages (`/tags`, `/tags/<tag>`) combine archives and projects; list links come from `Post.href`, not a hardcoded collection path.
+- Tag pages live under each section: `/archives/tags`, `/archives/tags/<tag>`, `/projects/tags`, `/projects/tags/<tag>`. They use `PostItem` / `ProjectItem` respectively, and list links come from `Post.href`, not a hardcoded collection path.
 - `src/lib/*` — search, tag, and archive helpers shared by Astro pages and React islands.
 - `astro.config.mjs` — markdown pipeline (Expressive Code, callouts, code tabs, external links). Markdown feature usage is documented in `README.md`.
 

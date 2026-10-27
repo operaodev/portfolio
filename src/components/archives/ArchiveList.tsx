@@ -64,7 +64,7 @@ function useUrlQuery(initialQuery: string = '') {
   return [query, setQuery] as const
 }
 
-function PostItem({ post }: { post: Post }) {
+export function PostItem({ post }: { post: Post }) {
   return (
     <article className="group">
       <div className="md:flex items-start justify-between gap-6 sm:gap-8">
@@ -82,7 +82,7 @@ function PostItem({ post }: { post: Post }) {
               {post.tags.map((tag) => (
                 <a
                   key={tag}
-                  href={`/tags/${slugifyTag(tag)}`}
+                  href={`/archives/tags/${slugifyTag(tag)}`}
                   className="inline-flex items-center gap-1 rounded-md border border-border/60 bg-card/60 px-2 py-0.5 font-mono text-xs text-muted-foreground transition-colors hover:border-accent/40 hover:text-accent"
                 >
                   <span className="text-accent/70">#</span>
@@ -137,7 +137,7 @@ export default function ArchiveList({ posts = [], initialQuery = '', tags }: Arc
             {allTags.map((tag) => (
               <a
                 key={tag.slug}
-                href={`/tags/${tag.slug}`}
+                href={`/archives/tags/${tag.slug}`}
                 className="group inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground transition-all hover:border-accent/40 hover:text-accent hover:bg-card"
               >
                 <span className="text-accent/70 font-mono">#</span>

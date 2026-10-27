@@ -83,7 +83,7 @@ const pageUrl = Astro.url?.href ?? undefined;
 
 <Base title={title} description={description} ogImage={ogImage}>
     <div id="main-content" class="flex-1">
-        <div class="mx-auto w-full max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
+        <div class="mx-auto w-full max-w-6xl page-container">
             <div class="mx-auto xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:gap-14">
                 <div class="min-w-0">
                     <nav aria-label="Breadcrumb" class="mb-6 print:hidden">
@@ -106,7 +106,7 @@ const pageUrl = Astro.url?.href ?? undefined;
                                     href="/archives"
                                     class="transition-colors hover:text-foreground"
                                 >
-                                    Archivos
+                                    Blog
                                 </a>
                             </li>
                             <li class="flex items-center gap-1">
@@ -156,7 +156,7 @@ const pageUrl = Astro.url?.href ?? undefined;
                             <div class="mt-4 flex flex-wrap gap-1.5">
                                 {tagList.map((tag) => (
                                     <a
-                                        href={`/tags/${slugifyTag(tag)}`}
+                                        href={`/archives/tags/${slugifyTag(tag)}`}
                                         class="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2 py-0.5 font-mono text-[0.6875rem] text-muted-foreground transition-colors hover:border-accent/50 hover:text-accent"
                                     >
                                         <span class="text-accent/70">#</span>

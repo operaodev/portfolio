@@ -60,7 +60,7 @@ export function ProjectItem({ project }: { project: Project }) {
               {project.tags.map((tag) => (
                 <a
                   key={tag}
-                  href={`/tags/${slugifyTag(tag)}`}
+                  href={`/projects/tags/${slugifyTag(tag)}`}
                   className="inline-flex items-center gap-1 rounded-md border border-border/60 bg-card/60 px-2 py-0.5 font-mono text-xs text-muted-foreground transition-colors hover:border-accent/40 hover:text-accent"
                 >
                   <span className="text-accent/70">#</span>
@@ -85,7 +85,7 @@ export default function ProjectList({ projects = [] }: ProjectListProps) {
           {allTags.map((tag) => (
             <a
               key={tag.slug}
-              href={`/tags/${tag.slug}`}
+              href={`/projects/tags/${tag.slug}`}
               className="group inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground transition-all hover:border-accent/40 hover:text-accent hover:bg-card"
             >
               <span className="text-accent/70 font-mono">#</span>
