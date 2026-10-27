@@ -70,7 +70,7 @@ function PostItem({ post }: { post: Post }) {
       <div className="md:flex items-start justify-between gap-6 sm:gap-8">
         <div className="flex-1 min-w-0">
           <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors text-balance">
-            <a href={`/archives/${post.slug}`} className="hover:text-primary">
+            <a href={post.href} className="hover:text-primary">
               {post.title}
             </a>
           </h3>
@@ -92,7 +92,7 @@ function PostItem({ post }: { post: Post }) {
             </div>
           )}
         </div>
-        <div className="flex flex-row-reverse md:block items-center justify-between text-right shrink-0 whitespace-nowrap pt-0.5">
+        <div className="mt-5 md:mt-0 flex flex-row-reverse md:block items-center justify-between text-right shrink-0 whitespace-nowrap pt-0.5">
           <time className="text-xs sm:text-sm text-muted-foreground block">
             {formatDisplayDate(post.date)}
           </time>

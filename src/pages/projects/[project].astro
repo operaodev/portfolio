@@ -1,0 +1,135 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import { Calendar, ChevronRight, ExternalLink } from "@lucide/astro";
+import { slugifyTag } from "../../lib/tags";
+import "../../styles/archives.css";
+import "katex/dist/katex.min.css";
+
+export const getStaticPaths = (async () => {
+    const projects = await getCollection(
+        "projects",
+        (project) => !project.data.draft,
+    );
+    return projects.map((project) => ({
+        params: { project: project.id },
+        props: { project },
+    }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props as {
+    project: import("astro:content").CollectionEntry<"projects">;
+};
+const { title, description, date, tags, image, url } = project.data;
+
+const { Content } = await render(project);
+
+const tagList: string[] = Array.isArray(tags) ? tags : [];
+const displayTag = (tag: string) =>
+    tag ? tag.charAt(0).toUpperCase() + tag.slice(1) : tag;
+
+const formatDate = (value: Date) =>
+    value.toLocaleDateString("es-PE", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+    });
+---
+
+<Base title={`${title} - Proyectos`} description={description} ogImage={image}>
+    <div id="main-content" class="flex-1">
+        <div class="page-container">
+            <div class="mx-auto w-full max-w-3xl">
+                <nav aria-label="Breadcrumb" class="mb-6">
+                    <ol class="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
+                        <li class="flex items-center gap-1">
+                            <a
+                                href="/"
+                                class="transition-colors hover:text-foreground"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <ChevronRight
+                                size={12}
+                                class="opacity-60"
+                                aria-hidden="true"
+                            />
+                            <a
+                                href="/projects"
+                                class="transition-colors hover:text-foreground"
+                            >
+                                Proyectos
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <ChevronRight
+                                size={12}
+                                class="opacity-60"
+                                aria-hidden="true"
+                            />
+                            <span
+                                aria-current="page"
+                                class="font-medium text-foreground"
+                            >
+                                {title}
+                            </span>
+                        </li>
+                    </ol>
+                </nav>
+
+                <header>
+                    <h1 class="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+                        {title}
+                    </h1>
+                    {description && (
+                        <p class="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                            {description}
+                        </p>
+                    )}
+
+                    <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3 text-xs text-muted-foreground">
+                        <span class="flex items-center gap-1.5">
+                            <Calendar size={13} aria-hidden="true" />
+                            <time datetime={date.toISOString().slice(0, 10)}>
+                                {formatDate(date)}
+                            </time>
+                        </span>
+                        {url && (
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 font-medium text-foreground transition-colors hover:border-accent/50 hover:text-accent"
+                            >
+                                <ExternalLink size={13} aria-hidden="true" />
+                                Visitar proyecto
+                            </a>
+                        )}
+                    </div>
+
+                    {tagList.length > 0 && (
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            {tagList.map((tag) => (
+                                <a
+                                    href={`/tags/${slugifyTag(tag)}`}
+                                    class="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2 py-0.5 font-mono text-[0.6875rem] text-muted-foreground transition-colors hover:border-accent/50 hover:text-accent"
+                                >
+                                    <span class="text-accent/70">#</span>
+                                    {displayTag(tag)}
+                                </a>
+                            ))}
+                        </div>
+                    )}
+                </header>
+
+                <article class="prose mt-8 max-w-none">
+                    <Content />
+                </article>
+            </div>
+        </div>
+    </div>
+</Base>

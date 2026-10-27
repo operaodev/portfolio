@@ -1,14 +1,12 @@
 ---
 title: "Panda Store: recargas de diamantes para Mobile Legends y Free Fire"
 description: Tienda online de recargas de diamantes construida con Astro, Tailwind CSS y TypeScript, desplegada en Vercel.
-date: 2026-10-5
+date: 2026-10-05
 tags:
-  - Proyecto
   - Astro
-  - Tailwind
   - TypeScript
-  - Vercel
-ogImage: /pandastore-preview.png
+image: /images/proyectos/pandastore-preview.png
+url: https://www.pandastore.website/
 draft: false
 ---
 
@@ -16,7 +14,7 @@ draft: false
 
 [Visitar pandastore.website](https://www.pandastore.website/)
 
-![Vista previa de Panda Store](/pandastore-preview.png)
+![Vista previa de Panda Store](/images/proyectos/pandastore-preview.png)
 
 ## El proyecto
 

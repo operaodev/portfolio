@@ -48,7 +48,7 @@
   --font-jetbrains-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-jetbrains: var(--font-jetbrains-mono); /* all text uses JetBrains */
   /* ===== BACKGROUND BLUR ===== */
-  --background-blur: 20px;                     /* blur applied over the 3D scene */
+  --background-blur: 15px;                     /* blur applied over the 3D scene */
 }
 
 @theme inline {
@@ -94,6 +94,11 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-caution: var(--caution);
+}
+
+/* Shared page shell used by the inner index pages. */
+@utility page-container {
+  @apply container mx-auto px-6 pt-5 pb-20 md:pt-16;
 }
 
 .status-dot {

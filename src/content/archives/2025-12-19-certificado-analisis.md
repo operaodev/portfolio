@@ -5,15 +5,15 @@ date: 2025-12-19
 tags:
   - Certificado
   - Profesional
-ogImage: /modular-analisis.png
+ogImage: /images/certificados/certificado-analisis-anverso.png
 draft: false
 ---
 
 Certificado de **unidades de competencias N° 2** otorgado por **ISIL** que acredita la capacidad de administrar el diseño funcional de los sistemas de información, de acuerdo a las demandas del negocio que son parte del alcance de la arquitectura de sistemas vigente.
 
-![Anverso del certificado de Análisis y Diseño de Sistemas de Información otorgado por ISIL](/modular-analisis.png)
+![Anverso del certificado de Análisis y Diseño de Sistemas de Información otorgado por ISIL](/images/certificados/certificado-analisis-anverso.png)
 
-![Reverso del certificado de Análisis y Diseño de Sistemas de Información otorgado por ISIL](/modular-analisis-back.png)
+![Reverso del certificado de Análisis y Diseño de Sistemas de Información otorgado por ISIL](/images/certificados/certificado-analisis-reverso.png)
 
 ## Competencia acreditada
 

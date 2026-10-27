@@ -10,16 +10,16 @@ import { Icon } from "astro-icon/components";
             <h1 class="mb-2 text-4xl md:text-5xl font-bold tracking-tight text-balance">
                 {siteInfo.name}
             </h1>
-            <p class="mb-4 text-lg md:text-xl text-muted-foreground">
+            <p class="mb-4 text-lg md:text-xl text-muted-foreground/80">
                 {siteInfo.role}
             </p>
 
-            <p class="mb-4 text-base md:text-lg text-foreground/85 leading-relaxed text-pretty">
+            <p class="mb-10 text-base md:text-lg text-foreground/85 leading-relaxed text-pretty">
                 {siteInfo.home.bio}
             </p>
-            <p class="mb-10 text-base md:text-lg text-foreground/85 leading-relaxed text-pretty">
+            <!-- <p class="mb-10 text-base md:text-lg text-foreground/85 leading-relaxed text-pretty">
                 {siteInfo.home.note}
-            </p>
+            </p> -->
 
             <div class="flex flex-wrap items-center gap-5">
                 {siteInfo.contacts.map((contact) => (
@@ -34,6 +34,9 @@ import { Icon } from "astro-icon/components";
                         <Icon name={contact.label} class="w-10 h-10" />
                     </a>
                 ))}
+                <!-- <a>
+                    <Icon name="cv" class="w-10 h-10" />
+                </a> -->
             </div>
         </div>
     </section>

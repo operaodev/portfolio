@@ -1,0 +1,26 @@
+---
+import Base from "../../layouts/Base.astro";
+import ProjectList from "../../components/projects/ProjectList";
+import { getProjectPosts } from "../../lib/project_data";
+import { info } from "../../lib/info";
+
+const projects = await getProjectPosts();
+---
+
+<Base
+    title={`Proyectos - ${info.site.name}`}
+    description={`Proyectos de desarrollo web, aplicaciones y herramientas creadas por ${info.name}.`}
+>
+    <section class="page-container">
+        <div class="max-w-3xl mx-auto mb-8">
+            <h1 class="text-4xl font-bold tracking-tight text-foreground">
+                Proyectos
+            </h1>
+            <p class="mt-2 text-base text-muted-foreground leading-relaxed">
+                Una selección de proyectos en los que he trabajado, desde
+                aplicaciones web hasta herramientas y experimentos.
+            </p>
+        </div>
+        <ProjectList projects={projects} client:load />
+    </section>
+</Base>

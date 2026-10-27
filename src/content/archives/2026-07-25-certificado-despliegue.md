@@ -1,19 +1,19 @@
 ---
 title: Despliegue y Calidad de Sistemas de Información
 description: Certificado de unidades de competencias N° 3 otorgado por ISIL en Despliegue y Calidad de Sistemas de Información.
-date: 2026-7-25
+date: 2026-07-25
 tags:
   - Certificado
   - Profesional
-ogImage: /modular-despliegue.png
+ogImage: /images/certificados/certificado-despliegue-anverso.png
 draft: false
 ---
 
 Certificado de **unidades de competencias N° 3** otorgado por **ISIL** que acredita la capacidad de desarrollar las pruebas integrales de los sistemas de información y servicios de TI en la fase de implantación, de acuerdo al diseño funcional, buenas prácticas de TI y políticas de seguridad de la organización; así como realizar la puesta en producción de los sistemas de información o servicios de TI, de acuerdo a la planificación efectuada.
 
-![Anverso del certificado de Despliegue y Calidad de Sistemas de Información otorgado por ISIL](/modular-despliegue.png)
+![Anverso del certificado de Despliegue y Calidad de Sistemas de Información otorgado por ISIL](/images/certificados/certificado-despliegue-anverso.png)
 
-![Reverso del certificado de Despliegue y Calidad de Sistemas de Información otorgado por ISIL](/modular-despliegue-back.png)
+![Reverso del certificado de Despliegue y Calidad de Sistemas de Información otorgado por ISIL](/images/certificados/certificado-despliegue-reverso.png)
 
 ## Competencia acreditada
 

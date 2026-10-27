@@ -109,7 +109,7 @@ export default function SearchOverlay({
       role="dialog"
       aria-modal="true"
       aria-label="Search articles"
-      className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/60 px-4 pb-10 pt-[14vh] backdrop-blur-sm"
+      className="fixed inset-0 z-60 flex items-start justify-center overflow-y-auto bg-black/60 px-4 pb-10 pt-[14vh] backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
@@ -159,7 +159,7 @@ export default function SearchOverlay({
               return (
                 <a
                   key={post.slug}
-                  href={`/archives/${post.slug}`}
+                  href={post.href}
                   data-active={active ? 'true' : undefined}
                   onMouseEnter={() => setActiveIndex(idx)}
                   onClick={() => onSelect(post)}

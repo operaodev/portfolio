@@ -5,13 +5,13 @@ date: 2026-09-21
 tags:
   - Logro
   - Profesional
-ogImage: /constancia-egresado.png
+ogImage: /images/logros/constancia-egresado.png
 draft: false
 ---
 
 Con mucho orgullo comparto la culminación de una etapa que significó esfuerzo, constancia y aprendizaje: mi constancia de egresado del Programa de Estudios en **Desarrollo de Sistemas de Información**.
 
-![Constancia de egresado de Oswaldo Natanael Maguiño Soto](/constancia-egresado.png)
+![Constancia de egresado de Oswaldo Natanael Maguiño Soto](/images/logros/constancia-egresado.png)
 
 ## Un logro personal
 

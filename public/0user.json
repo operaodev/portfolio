@@ -2,14 +2,13 @@
     "name": "Oswaldo Maguiño",
     "role": "Desarrollador Full-Stack",
     "home": {
-        "bio": "Desarrollador de software apasionado por el anime y los juegos de cartas. Me enfoco en diseñar y desarrollar sistemas fiables, escalables y mantenibles, trabajando tanto en el frontend como en el backend. Me gusta crear soluciones bien estructuradas, aprender constantemente y afrontar nuevos retos tecnológicos.",
-        "note": "Gracias por visitar mi portfolio. ¡Espero que encuentres algo interesante!"
+        "bio": "Desarrollador de software apasionado por el anime y los juegos de cartas. Me enfoco en diseñar y desarrollar sistemas fiables, escalables y mantenibles, trabajando tanto en el frontend como en el backend."
     },
     "site": {
-        "name": "example.com",
-        "url": "https://example.com",
-        "title": "Oswaldo Maguino - Desarrollador Full-Stack",
-        "description": "Software engineer specializing in web applications, APIs, and cloud infrastructure",
+        "name": "Oswaldo Maguiño",
+        "url": "https://oswaldomaguino.vercel.app",
+        "title": "Oswaldo Maguiño - Desarrollador Full-Stack",
+        "description": "Desarrollador Full-Stack especializado en aplicaciones web, APIs y soluciones en la nube. Creo sistemas escalables y mantenibles con TypeScript, Go y buenas prácticas de ingeniería.",
         "locale": "es_PE",
         "ogImage": ""
     },
@@ -50,16 +49,9 @@
                 "label": "download cv",
                 "text": "cv.pdf",
                 "href": "/cv.pdf",
-                "filename": "john-doe-cv.pdf"
-            },
-            "pgp": {
-                "label": "download pgp",
-                "text": "publickey.asc",
-                "href": "/pgp/publickey.asc",
-                "filename": "publickey.asc"
+                "filename": "oswaldo-maguino-cv.pdf"
             }
         },
-        "pgpFingerprint": "D396 46DD D14F 0674 2C8C F5F2 04A2 011D E5BD 63A0",
         "experience": [
             {
                 "role": "Desarrollador Full-Stack",

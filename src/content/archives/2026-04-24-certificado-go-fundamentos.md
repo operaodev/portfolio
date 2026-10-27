@@ -4,15 +4,13 @@ description: Certificado por completar el curso GoLang, impartido por Ricardo Cu
 date: 2026-04-24
 tags:
   - Certificado
-  - DevTalles
-  - Go
-ogImage: /certificado-go-fundamentos.jpg
+ogImage: /images/certificados/certificado-go-fundamentos.jpg
 draft: false
 ---
 
 Certificado que acredita que **Oswaldo Natanael Maguiño Soto** completó el curso **GoLang: Fundamentos del lenguaje**, impartido por **Ricardo Cuéllar**, con una duración de **23 horas** de contenido.
 
-![Certificado del curso GoLang: Fundamentos del lenguaje](/certificado-go-fundamentos.jpg)
+![Certificado del curso GoLang: Fundamentos del lenguaje](/images/certificados/certificado-go-fundamentos.jpg)
 
 ## Lo que aprendí en el curso
 

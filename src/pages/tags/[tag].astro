@@ -1,12 +1,17 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getArchivePosts } from "../../lib/archive_data";
+import { getProjectPosts } from "../../lib/project_data";
 import { getAllTags, slugifyTag } from "../../lib/tags";
 import { ChevronRight } from "@lucide/astro";
 import type { Post } from "../../lib/search";
 
 export async function getStaticPaths() {
-  const posts = await getArchivePosts();
+  const [archivePosts, projectPosts] = await Promise.all([
+    getArchivePosts(),
+    getProjectPosts(),
+  ]);
+  const posts = [...archivePosts, ...projectPosts];
   const tags = getAllTags(posts);
 
   return tags.map((tagInfo) => {
@@ -52,7 +57,7 @@ function formatDisplayDate(dateStr?: string): string {
 }
 ---
 
-<Base title={`#${tag} - Etiquetas`} description={`Articulos etiquetados con ${tag}.`}>
+<Base title={`#${tag} - Etiquetas`} description={`Contenidos etiquetados con ${tag}.`}>
   <section class="container mx-auto px-6 pt-16 pb-20">
     <div class="max-w-3xl mx-auto">
       <nav aria-label="Breadcrumb" class="mb-6">
@@ -76,7 +81,7 @@ function formatDisplayDate(dateStr?: string): string {
           <span class="text-accent">#</span>{tag}
         </h1>
         <p class="mt-3 text-base text-muted-foreground">
-          {posts.length} {posts.length === 1 ? 'articulo etiquetado' : 'articulos etiquetados'} con “{tag}”.
+          {posts.length} {posts.length === 1 ? 'contenido etiquetado' : 'contenidos etiquetados'} con “{tag}”.
         </p>
       </header>
 
@@ -86,7 +91,7 @@ function formatDisplayDate(dateStr?: string): string {
             <div class="flex items-start justify-between gap-6 sm:gap-8">
               <div class="flex-1 min-w-0">
                 <h2 class="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors text-balance">
-                  <a href={`/archives/${post.slug}`} class="hover:text-primary">
+                  <a href={post.href} class="hover:text-primary">
                     {post.title}
                   </a>
                 </h2>

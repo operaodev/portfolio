@@ -41,9 +41,7 @@ export interface ResumeData {
     bio: string;
     downloads: {
         cv: DownloadItem;
-        pgp: DownloadItem;
     };
-    pgpFingerprint?: string;
     experience: ExperienceItem[];
     skills: SkillCategory[];
     education?: EducationItem[];

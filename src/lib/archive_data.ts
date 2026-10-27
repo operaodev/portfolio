@@ -45,6 +45,7 @@ export function formatArchivePost(entry: ArchiveEntry): Post {
 
   return {
     slug: entry.id,
+    href: `/archives/${entry.id}`,
     title: entry.data.title,
     date: dateStr,
     excerpt: entry.data.description,

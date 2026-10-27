@@ -4,15 +4,13 @@ description: Certificado de Udemy por completar el curso GIT + GitHub, impartido
 date: 2026-08-29
 tags:
   - Certificado
-  - Udemy
-  - Git y GitHub
-ogImage: /certificado-git.jpg
+ogImage: /images/certificados/certificado-git.jpg
 draft: false
 ---
 
 Certificado otorgado por **Udemy** que acredita que **Oswaldo Natanael Maguiño Soto** completó con éxito el curso **GIT + GitHub: Todo un sistema de control de versiones de cero**, impartido por **Fernando Herrera, {d/t} - DevTalles**, con una duración de **11.5 horas**.
 
-![Certificado del curso GIT + GitHub de Udemy](/certificado-git.jpg)
+![Certificado del curso GIT + GitHub de Udemy](/images/certificados/certificado-git.jpg)
 
 ## Lo que aprendí en el curso
 

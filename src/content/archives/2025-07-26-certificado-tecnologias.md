@@ -5,15 +5,15 @@ date: 2025-07-26
 tags:
   - Certificado
   - Profesional
-ogImage: /modular-tecnologias.jpeg
+ogImage: /images/certificados/certificado-tecnologias-anverso.jpeg
 draft: false
 ---
 
 Certificado de **unidades de competencias N° 1** otorgado por **ISIL** que acredita la capacidad de desarrollar la construcción de programas de los sistemas de información, de acuerdo al diseño funcional, estándares internacionales de TI, buenas prácticas de programación y políticas de seguridad de la organización.
 
-![Anverso del certificado de Tecnologías de Desarrollo de Software otorgado por ISIL](/modular-tecnologias.jpeg)
+![Anverso del certificado de Tecnologías de Desarrollo de Software otorgado por ISIL](/images/certificados/certificado-tecnologias-anverso.jpeg)
 
-![Reverso del certificado de Tecnologías de Desarrollo de Software otorgado por ISIL](/modular-tecnologias-back.png)
+![Reverso del certificado de Tecnologías de Desarrollo de Software otorgado por ISIL](/images/certificados/certificado-tecnologias-reverso.png)
 
 ## Competencia acreditada
 
