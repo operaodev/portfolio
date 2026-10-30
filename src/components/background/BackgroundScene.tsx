@@ -26,7 +26,7 @@ const isMobile =
   typeof window !== 'undefined' &&
   window.matchMedia('(max-width: 640px)').matches
 
-const CARD_COUNT = isMobile ? 10 : 25
+const CARD_COUNT = isMobile ? 15 : 30
 
 const textureUrls = [...frontUrls, backUrl]
 

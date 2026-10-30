@@ -13,9 +13,11 @@ const CARD_WIDTH = 0.295 * SCALE
 const CARD_HEIGHT = 0.43 * SCALE
 const CARD_DEPTH = 0.005 * SCALE
 
-const MAX_SPEED = 0.12
+const START_SPEED = 0.11
+const END_SPEED = 0.07
 const ROTATION_SPEED = 2
 const Z_BOUNDS = 5
+const START_Z = -Z_BOUNDS * 2
 
 const randomTexture = (textures: Texture[]) =>
   textures[Math.floor(Math.random() * textures.length)]
@@ -25,6 +27,7 @@ export default function Card3D({ fronts, back }: Card3DProps) {
   const meshRef = useRef<Mesh>(null)
   const baseRotaRef = useRef(0)
   const baseVeloRef = useRef(0)
+  const initialSpawnRef = useRef(true)
 
   useLayoutEffect(() => {
     const mesh = meshRef.current
@@ -34,6 +37,14 @@ export default function Card3D({ fronts, back }: Card3DProps) {
     baseVeloRef.current = randomVelocity()
 
     mesh.position.copy(squareRandomPosition(Z_BOUNDS))
+
+    // Spread the very first generation across the whole path so the field is
+    // already populated instead of every card crossing and wrapping together.
+    if (initialSpawnRef.current) {
+      initialSpawnRef.current = false
+      mesh.position.z = START_Z + Math.random() * (Z_BOUNDS - START_Z)
+    }
+
     mesh.rotation.set(Math.random() * Math.PI * 5, baseRotaRef.current, 0)
   }, [front])
 
@@ -41,10 +52,14 @@ export default function Card3D({ fronts, back }: Card3DProps) {
     const mesh = meshRef.current
     if (!mesh) return
 
-    const velocity =
-      baseVeloRef.current *
-      (0.7 + 0.3 * Math.cos(state.clock.elapsedTime * 0.3))
-    mesh.position.z += Math.max(delta, velocity * MAX_SPEED)
+    const progress = Math.min(
+      Math.max((mesh.position.z - START_Z) / (Z_BOUNDS - START_Z), 0),
+      1,
+    )
+    const speed = START_SPEED + (END_SPEED - START_SPEED) * progress
+    // Slight per-card variation (0.8–1) keeps the cards from moving in lockstep.
+    const variation = 0.8 + 0.2 * ((baseVeloRef.current - 0.5) / 0.8)
+    mesh.position.z += Math.max(delta, speed * variation)
 
     if (mesh.position.z > Z_BOUNDS) {
       setFront((current) => {

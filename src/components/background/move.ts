@@ -1,6 +1,6 @@
 import { Vector3 } from 'three'
 
-const RADIUS = 5
+const RADIUS = 4
 const X = 0.2
 const Y = 0.4
 
