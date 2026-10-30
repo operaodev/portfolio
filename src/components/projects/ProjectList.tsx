@@ -38,8 +38,8 @@ export function ProjectItem({ project }: { project: Project }) {
 
         <div className="flex-1 min-w-0">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors text-balance">
-              <a href={project.href} className="hover:text-primary">
+            <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground text-balance">
+              <a href={project.href} className="hover:text-accent transition-colors">
                 {project.title}
               </a>
             </h3>

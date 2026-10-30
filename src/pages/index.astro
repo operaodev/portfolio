@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import siteInfo from "../../public/0user.json";
 import { Icon } from "astro-icon/components";
+import { ArrowBigRightDash } from "@lucide/astro";
 ---
 
 <Base title={siteInfo.site.title} description={siteInfo.site.description}>
@@ -21,22 +22,32 @@ import { Icon } from "astro-icon/components";
                 {siteInfo.home.note}
             </p> -->
 
-            <div class="flex flex-wrap items-center gap-5">
-                {siteInfo.contacts.map((contact) => (
-                    <a
-                        href={contact.href}
-                        target={contact.target}
-                        rel={contact.rel}
-                        aria-label={contact.label}
-                        title={contact.label}
-                        class="text-muted-foreground hover:text-accent transition-colors"
-                    >
-                        <Icon name={contact.label} class="w-10 h-10" />
-                    </a>
-                ))}
-                <!-- <a>
-                    <Icon name="cv" class="w-10 h-10" />
-                </a> -->
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div class="flex flex-wrap items-center gap-5">
+                    {siteInfo.contacts.map((contact) => (
+                        <a
+                            href={contact.href}
+                            target={contact.target}
+                            rel={contact.rel}
+                            aria-label={contact.label}
+                            title={contact.label}
+                            class="text-muted-foreground hover:text-accent transition-colors"
+                        >
+                            <Icon name={contact.label} class="w-10 h-10" />
+                        </a>
+                    ))}
+                    <!-- <a>
+                        <Icon name="cv" class="w-10 h-10" />
+                    </a> -->
+                </div>
+
+                <a
+                    href="/projects"
+                    class="w-full sm:w-auto sm:ml-auto inline-flex items-center justify-start sm:justify-center gap-3 text-lg font-medium text-muted-foreground transition-colors hover:text-accent group"
+                >
+                    <span>Ver proyectos</span>
+                    <ArrowBigRightDash size={22} aria-hidden="true" class="animate-[move-right_1.6s_ease-in-out_infinite]" />
+                </a>
             </div>
         </div>
     </section>

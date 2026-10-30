@@ -56,7 +56,7 @@
             {
                 "role": "Desarrollador Full-Stack",
                 "company": "Freelance",
-                "period": "2025 — Present",
+                "period": "2025 — Presente",
                 "description": [
                     "Desarrollo de aplicaciones web, APIs y soluciones a medida para clientes.",
                     "Diseño de arquitecturas escalables, automatización de procesos y despliegue en la nube.",
@@ -94,12 +94,15 @@
                 ]
             },
             {
-                "category": "infraestructura",
+                "category": "infraestructura y arquitectura",
                 "items": [
                     "Docker",
                     "AWS",
                     "Supabase",
-                    "Linux"
+                    "Linux",
+                    "Microservicios",
+                    "MVC",
+                    "API Rest"
                 ]
             },
             {

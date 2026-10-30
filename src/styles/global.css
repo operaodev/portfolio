@@ -96,6 +96,16 @@
   --color-caution: var(--caution);
 }
 
+@keyframes move-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
 /* Shared page shell used by the inner index pages. */
 @utility page-container {
   @apply container mx-auto px-6 pt-5 pb-20 md:pt-16;

@@ -69,8 +69,8 @@ export function PostItem({ post }: { post: Post }) {
     <article className="group">
       <div className="md:flex items-start justify-between gap-6 sm:gap-8">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors text-balance">
-            <a href={post.href} className="hover:text-primary">
+          <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground text-balance">
+            <a href={post.href} className="hover:text-accent transition-colors">
               {post.title}
             </a>
           </h3>

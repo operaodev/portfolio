@@ -13,11 +13,8 @@ import { resume, contacts } from "../../lib/info";
 import { ProjectItem } from "../../components/projects/ProjectList";
 import { getProjectPosts } from "../../lib/project_data";
 
-const [firstProject] = await getProjectPosts();
-// Placeholder: repeat the first project until there are enough featured ones.
-const featuredProjects = firstProject
-    ? Array.from({ length: 3 }, () => firstProject)
-    : [];
+const projects = await getProjectPosts();
+const featuredProjects = projects.slice(0, 3);
 
 const sectionTitleClass =
     "text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2";
